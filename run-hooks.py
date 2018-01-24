@@ -18,12 +18,12 @@
 from eve import Eve
 
 
-def codemotion(endpoint, response):
+def hookname(blogs, response):
     for document in response['_items']:
-        document['CODEMOTION'] = 'IS SO FREAKING COOL!'
+        document['name'] +=  ' hooked'
 
 app = Eve()
-app.on_fetched_resource += codemotion
+app.on_fetched_resource += hookname
 
 if __name__ == '__main__':
     app.run()
