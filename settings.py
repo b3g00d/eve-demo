@@ -22,17 +22,6 @@ speakers = {
             'minlength': 1,
             'maxlength': 10,
         },
-        'blogs': {
-            'type': 'list',
-            'schema': {
-                'type': 'objectid',
-                'data_relation': {
-                    'resource': 'blogs',
-                    'field': '_id',
-                    'embeddable': True,
-                }
-            },
-        }
     }
 }
 
@@ -51,6 +40,14 @@ blogs = {
         'content': {
             'type': 'string',
             'minlength': 1,
+        },
+        'author': {
+            'type': 'objectid',
+            'data_relation': {
+                'resource': 'speakers',
+                'field': '_id',
+                'embeddable': True,
+            },
         }
     }
 }
